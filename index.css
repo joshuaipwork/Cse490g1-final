@@ -1,0 +1,149 @@
+.title {
+  font-size: 6em;
+  width: 100%;
+  text-align: center;
+}
+
+.authors {
+  font-size: 2em;
+  height: 1000px;
+  text-align: center;
+}
+
+.spacer {
+  height: 1000px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  font-family: 'Public Sans', sans-serif;
+  background-color: black;
+  color: lightgrey;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+b {
+  font-size: 1.5em;
+}
+
+.intro {
+  background-color: black;
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  color: white;
+  height:1200px;
+  width:25%;
+  padding-left: 1%;
+}
+
+.trigger {
+  background-color: black;
+  border: 1px;
+  border-style: solid;
+  color: white;
+  border-color: black;
+  height:750px;
+  width:25%;
+  padding-left: 1%;
+}
+
+.outro {
+  background-color: black;
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  height:1000px;
+  width:25%;
+  padding-left: 1%;
+}
+
+.target {
+  background-color:blue;
+  height:100px;
+  width:100px;
+}
+
+.indicator {
+  background-color:blue;
+  height:1px;
+  width:100%;
+  position: fixed;
+  top:50%;
+  right: 0px;
+}
+
+/* The container for the visualization */
+.graphic__vis {
+  /*background-color: black;*/
+  background-color: transparent;
+  position: fixed;
+  height: 95%;
+  width: 70%;
+  top: 150%;
+  left: 27%;
+  transition: top 1s, left 1s, background-color 1s, position 1s;
+}
+
+.is__fixed {
+  top: 2%;
+}
+
+/* A picture of the Supreme Court */
+.intro__vis {
+  background-color: black;
+  position: fixed;
+  height: 713px;
+  width: 65%;
+  top: 150%;
+  left: 30%;
+  padding-top: 60px;
+  transition: top 1s, left 1s, background-color 1s, position 1s;
+}
+
+/* A picture of ACB being sworn in */
+.outro__vis {
+  background-color: black;
+  position: fixed;
+  height: 713px;
+  width: 65%;
+  top: 150%;
+  left: 30%;
+  padding-top: 70px;
+  transition: top 1s, left 1s, background-color 1s, position 1s;
+}
+
+#current-year {
+  text-align: right;
+  float:right;
+  font-size: 32pt;
+  color: white;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: transparent;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+#trigger > b {
+  font-size: 21pt;
+  color: white;
+}
+
+.tick text {
+  font-size: 12pt;
+} 
+
+a {
+  color: #00A6EF;
+}

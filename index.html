@@ -1,0 +1,752 @@
+<!DOCTYPE HTML>
+<html xml:lang="en" lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300&display=swap" rel="stylesheet">
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <title>The Ideologies of Supreme Court Justices</title>
+  <style media="all"></style>
+  <link rel="stylesheet" type="text/css" href="index.css" />
+  <script src="index.js"></script>
+  <!-- <script src="data.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.js "></script>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://d3js.org/d3-scale.v3.min.js"></script>
+</head>
+
+<body>
+  <div class="content">
+    <p class="title">
+      The Ideology of the Supreme Court
+    </p>
+    <p class="authors" id="authors">
+      By: Joshua Ip, Karamvir Rai, Nan Lin, Sherley Thirumavalan
+    </p>
+
+    <!-- <p class="indicator">Trigger</p> -->
+    <div class="intro__vis" id="intro__vis">
+      <img src="scotus.jpg" width="100%">
+    </div>
+
+    <div class="outro__vis" id="outro__vis">
+      <img src="outro.jpg" width="100%">
+    </div>
+
+    <div class="graphic">
+      <div class="graphic__vis" id="graphic__vis">
+        <p id="current-year"></p>
+        <svg id="graph" height="775" width="900"></svg>
+      </div>
+      <div class="graphic__prose">
+        <div class="intro" id="intro">
+          The Supreme Court of the United States is simultaneously one of the most powerful and one of the least
+          understood branches of American government. Since the 1900s, the nine Justices of the court have been
+          responsible for some of the biggest shifts in American politics. From the end of segregation to the beginning
+          of the Citizens United era, the court has evolved both politically and ideologically.
+          <br>
+          <br>
+          The Supreme Court has the power of Judicial Review, where it can decide what the law means
+          and whether or not a particular law is constitutional.
+          In the Supreme Court, four justices must vote in order to take up a court case. Once the case is argued, a
+          majority of the nine justices must sign on to an opinion in order for it to become binding.
+          <br>
+          <br>
+          Our visualization lets you follow the last 80 years of Supreme Court history and the
+          ideologies of the justices. We measure the ideology of the justices using
+          <a href="https://mqscores.lsa.umich.edu/measures.php">Martin-Quinn scores.</a>
+          Pay attention to the ideological balance of the court and its evolution over time. To the left, you can
+          read summaries of some of the most important cases and events in the court's history.
+          Please note that some years may have more than 9 justices if a justice died and was replaced in the same year.
+        </div>
+        <div class="trigger" id='trigger' year="1937">
+          <b>1937: National Labor Relations Board v Jones & Laughlin Steel Corporation</b><br><br>
+          This was a United States Supreme Court case that upheld the constitutionality of the National Labor Relations
+          Act of 1935, also known as the Wagner Act. The case represented a major expansion in the Court's interpretation
+          of Congress's power under the Commerce Clause and effectively spelled the end to the Court's striking down of
+          New Deal economic legislation.
+        </div>
+        <div class="trigger" id='trigger' year="1938">
+          <b>1938: New Negro Alliance v. Sanitary Grocery Co.</b><br><br>
+          New Negro Alliance v. Sanitary Grocery Co., was a landmark decision of the US Supreme Court which affects US
+          labor law, safeguarding a right to boycott and in the struggle by African Americans against discriminatory
+          hiring practices.
+        </div>
+        <div class="trigger" id='trigger' year="1939">
+          <b>1939: United States v. Miller</b><br><br>
+          This was a landmark decision of the US Supreme Court that involved a Second Amendment challenge to the National
+          Firearms Act of 1934 (NFA). The case is often cited in the ongoing US gun politics debate, as both sides
+          claim that it supports their position.
+        </div>
+        <div class="trigger" id='trigger' year="1940">
+          <b>1940: Chambers v. Florida</b><br><br>
+          This was a landmark United States Supreme Court case that dealt with the extent to which police pressure
+          resulting in a criminal defendant's confession violates the Due Process clause.The court held that the use of
+          mental torture, accompanied by threats of violence, was enough to justify the suppression of a confession.
+        </div> -->
+        <div class="trigger" id='trigger' year="1941">
+          <b>1941: The Stone Court Begins</b><br><br>
+          Following the retirement of Chief Justice Evan Hughes, President Franklin Delano Roosevelt nominates Associate
+          Justice Harlan Stone as the
+          next chief justice. Stone is considerably more liberal than his predecessor. As Chief Justice, he has the
+          ability to set the initial agenda for the Supreme Court and to assign which justice will write the Court's
+          opinion for a particular case. This power allows Chief Justices to influence the historical record.</div>
+        <div class="trigger" id='trigger' year="1942">
+          <b>1942: Glasser v. United States</b><br><br>
+          In a 7-2 decision, the Court ruled that excluding women from a jury pool was unconstitutional. The court
+          stated that jury pools should be a "cross-section of the community."
+        </div>
+        <div class="trigger" id='trigger' year="1943">
+          <b>1943: West Virginia State Board of Education v. Barnette</b><br><br>
+          In a 6-3 decision written by Justice Jackson, the court rules that the Free Speech Clause of the first
+          amendment prevents schools from forcing students to salute the American flag or recite the Pledge of
+          Allegiance.
+        </div>
+        <div class="trigger" id='trigger' year="1944">
+          <b>1944: Korematsu v. United States</b><br><br>
+          In a 6-3 decision, the court rules that the relocation of Japanese Americans from their homes to military
+          camps is constitutional. Roosevelt's Executive Order 9066 ordered "all persons of Japanese ancestry, including
+          aliens and non-aliens" to be relocated to internment camps.
+          It is widely considered to be one of the most racist rulings in American History.
+        </div>
+        <div class="trigger" id='trigger' year="1945">
+          <b>1945: Associated Press v. United States</b><br><br>
+          The Supreme Court in Associated Press v. United States upheld an injunction filed against the Associated Press
+          for alleged violations of the Sherman Antitrust Act of 1890. Most of the violations related to the agreement
+          that AP members made not to share their stories with nonmembers and to the power that existing members had to
+          exclude new ones.
+        </div>
+        <div class="trigger" id='trigger' year="1946">
+          <b>1946: The Vinson Court Begins</b><br><br>
+          Vinson took office at a time when the court was divided into two camps: a progressive camp led by Justices
+          Black and Douglas, and a more conservative camp led by Justices Jackson and Frankfurter. President Roosevelt
+          had appointed justices who would uphold the more expansive economic regulations of the New Deal, but the same
+          Roosevelt appointees often split on civil liberties cases. On his death, The New York Times credited Vinson
+          for soothing the tensions between the two blocs of justices, but legal historian Michal Belknap argues that
+          Vinson was largely unsuccessful in this endeavor.
+        </div>
+        <div class="trigger" id='trigger' year="1947">
+          <b>1947: Everson v. Board of Education</b><br><br>
+          Everson v. Board of Education, was a landmark decision of the United States Supreme Court which applied the
+          Establishment Clause in the country's Bill of Rights to state law. Prior to this decision, the First
+          Amendment's words, "Congress shall make no law respecting an establishment of religion" imposed limits only
+          on the federal government, and many states continued to grant certain religious denominations legislative or
+          effective privileges.
+        </div>
+        <div class="trigger" id='trigger' year="1948">
+          <b>1948: United States v. Paramount Pictures</b><br><br>
+          United States v. Paramount Pictures, Inc., was a landmark United States Supreme Court antitrust case that
+          decided the fate of film studios owning their own theatres and holding exclusivity rights on which theatres
+          would show their movies. It would also change the way Hollywood movies were produced, distributed, and
+          exhibited. The Supreme Court affirmed (a District Court's ruling) in this case that the existing distribution
+          scheme was in violation of the United States antitrust law, which prohibit certain exclusive dealing
+          arrangements.
+        </div>
+        <div class="trigger" id='trigger' year="1949">
+          <b>1949: Truman Nominates Clark and Minton</b><br><br>
+          Following the deaths of Justices Harlan Stone and Frank Murphy, Truman had the opportunity to nominate
+          two new justices in a single year. Truman nominated Attorney General Tom Clark, a personal friend with no
+          judicial experience, to the post. For the other seat, he nominated 7th Circuit Judge Sherman Minton, also
+          a personal friend. Clark's nomination was controversial but ultimately the Democratic Senate confirmed him.
+          Clark would serve for decades. Ideologically, both were considered moderates.
+        </div>
+        <div class="trigger" id='trigger' year="1950">
+          <b>1950: Dean Milk Company v. City of Madison</b><br><br>
+          In Dean Milk Company v. City of Madison, the court ruled
+          that the Smith Act, a federal law which made it a crime to
+          advocate or organize for the purpose of overthrowing the government,
+          did not violate the First Amendment of the Constitution. Though
+          overturned in 1969, it is one of the few times the court has placed substantial
+          limitations on free speech.
+          <br>
+        </div>
+        <div class="trigger" id='trigger' year="1951">
+          <b>1951</b><br><br>
+        </div>
+        <div class="trigger" id='trigger' year="1952">
+          <b>1952: Joseph Burstyn, Inc. v. Wilson</b><br><br>
+          This case, also referred to as the Miracle Decision, was a landmark decision by the United States Supreme
+          Court that largely marked the decline of motion picture censorship in the United States. In this case, the
+          Supreme Court ruled that a New York education law allowing a film to be banned on the basis of its being
+          sacrilegious violated the First Amendment.
+        </div>
+        <div class="trigger" id='trigger' year="1953">
+          <b>1953: The Warren Court Begins</b><br><br>
+          President Eisenhower nominates Associate Justice Earl Warren as the new Chief Justice.
+          Warren had a more expansive view of the court's power than his predecessors. A liberal himself, during Warren's term
+          the court would develop a solid liberal majority. The Warren Court is often considered to
+          be the most
+          liberal court in American history, and would lay down many landmark cases which would reshape everything from
+          civil rights to
+          federal power.
+        </div>
+        <div class="trigger" id='trigger' year="1954">
+          <b>1954: Brown v. Board of Education</b><br><br>
+          In this landmark decision, the U.S. Supreme Court ruled that U.S. state laws establishing racial segregation
+          in public schools are unconstitutional, even if the segregated schools are otherwise equal in quality. The
+          Court's unanimous (9–0) decision stated that "separate educational facilities are inherently unequal", and
+          therefore violate the Equal Protection Clause of the Fourteenth Amendment of the U.S. Constitution.
+        </div>
+        <div class="trigger" id='trigger' year="1955">
+          <b>1955: Harlan joins the Court</b><br><br>
+          Following the death of justice Robert Jackson, Eisenhower nominated John Marshall Harlan II to replace him.
+          The grandson of a former Supreme Court Justice, Harlan would prove to be a stauch conservative and a reliable
+          ideological counterpart to the liberal bloc of the Warren Court. Though rarely influential enough to persuade
+          a member of the liberal majority to defect, his tightly reasoned dissents would make him a leader in
+          conservative jurisprudence.
+        </div>
+        <div class="trigger" id='trigger' year="1956">
+          <b>1956: Brennan joins the Court</b><br><br>
+          Justice William Brennan, appointed by Eisenhower, replaced Sherman Minton on the court.
+          An outspoken progressive, he is widely considered to be a leader in the liberal wing and
+          as well as a highly effective jurist.
+          He would write many landmark case opinions,
+          including <i>Baker v. Carr</i> and
+          <i>New York Times v. Sullivan</i>.
+        </div>
+        <div class="trigger" id='trigger' year="1957">
+          <b>1957: Reid v. Covert</b><br><br>
+          In Reid v. Covert, the court ruled that United States citizens, even when abroad
+          even when associated with the military and even when outside of the territorial
+          jurisdiction of the United States, cannot be deprived of the protections
+          of the Constitution.
+        </div>
+        <div class="trigger" id='trigger' year="1958">
+          <b>1958: Kent v. Dullhes</b><br><br>
+          In Kent v. Dullhes, the court ruled that
+          the right to travel is a part of the "liberty" of
+          which the citizen cannot be deprived without due process of
+          law under the Fifth Amendment.
+        </div>
+        <div class="trigger" id='trigger' year="1959">
+          <b>1959: Williams v. Lee</b><br><br>
+          In Williams v. Lee, the court ruled that state courts do not have jurisdiction on Indian reservations without
+          the authorization of Congress.
+        </div>
+        <div class="trigger" id='trigger' year="1960">
+          <b>1960: Boynton v. Virginia</b><br><br>
+          In Boynton v. Virginia, the court ruled that
+          Racial segregation in all forms of public transportation is illegal under the Interstate Commerce Act of 1887.
+        </div>
+        <div class="trigger" id='trigger' year="1961">
+          <b>1961: Mapp v. Ohio</b><br><br>
+          In Mapp v. Ohio, the court ruled in a 5-3 vote that evidence
+          seized unlawfully could not be used in criminal prosecutions in state courts.
+        </div>
+        <div class="trigger" id='trigger' year="1962">
+          <b>1962: Baker v. Carr</b><br><br>
+          In one of the most important cases of the century, the court that federal courts could intervene to change how
+          legislative districts were drawn. In this case, Justice Brennan laid down the principle of "one person, one
+          vote." It is still a guiding principle of American politics to this day.
+        </div>
+        <div class="trigger" id='trigger' year="1963">
+          <b>1963: Gideon v. Wainwright</b></br><br>
+          In a landmark case, Justice Black ruled that states must grant criminals a public defender if they are being
+          tried for a crime in a state court. Previous jurisprudence held that
+          public defenders were only required for federal criminal cases.
+        </div>
+        <div class="trigger" id='trigger' year="1964">
+          <b>1964: Reynold v. Sims, Wesberry v. Sanders</b><br><br>
+          In these two cases, the court put the "one person, one vote" principle in Baker v. Carr
+          into practice.
+          <br>
+          The court ruled in Reynold v. Sims that state legislative districts must be drawn
+          so that an equal number of voters are in each district. In Wesberry v. Sanders,
+          the court decided that U.S congressional districts must also be drawn to have
+          an equal number of voters in each district.
+        </div>
+        <div class="trigger" id='trigger' year="1965">
+          <b>1965: Griswold v. Connecticut</b><br><br>
+          In this case, the Supreme Court ruled that a state's ban on the use of contraceptives violated the right
+          to marital privacy. This was in response to a 1879 law that criminalized the encouragement or use of birth
+          control.
+        </div>
+        <div class="trigger" id='trigger' year="1966">
+          <b>1966: Miranda v. Arizona</b><br><br>
+          In this landmark Supreme Court case, the Court held that if police do not inform people they arrest about
+          certain constitutional rights, including their Fifth Amendment right against self-incrimination, then their
+          confessions may not be used as evidence at trial.
+        </div>
+        <div class="trigger" id='trigger' year="1967">
+          <b>1967: Loving v. Virginia</b><br><br>
+          Loving v. Virginia, was a landmark civil rights decision of the U.S. Supreme Court in which the Court ruled
+          that laws banning interracial marriage violate the Equal Protection and Due Process Clauses of the Fourteenth
+          Amendment to the U.S. Constitution. The decision was followed by an increase in interracial marriages in the
+          U.S. and is remembered annually on Loving Day.
+        </div>
+        <div class="trigger" id='trigger' year="1968">
+          <b>1968: Terry v. Ohio</b><br><br>
+          In Terry v. Ohio, the court ruled that police may
+          stop a person if they have a reasonable suspicion that the person has
+          committed or is about to commit a crime. It is still the
+          standard by which police justify
+        </div>
+        <div class="trigger" id='trigger' year="1969">
+          <b>1969: The Burger Court Begins</b><br><br>
+          Following the retirement of Chief Justice Earl Warren, President Richard Nixon
+          appointed Warren Burger as the next Chief Justice.
+          Burger was significantly more conservative than Burger,
+          though not as conservative as his successors Rhenquist and Roberts.
+        </div>
+        <div class="trigger" id='trigger' year="1970">
+          <b>1970: Oregon v. Mitchell</b><br><br>
+          In Oregon v. Mitchell, the court ruled that congress has the power to regulate requirements for voting in
+          federal elections, but it is prohibited from
+          regulating requirements for voting in state and local elections.
+        </div>
+        <div class="trigger" id='trigger' year="1971">
+          <b>1971: New York Times Co. v. United States</b><br><br>
+          New York Times Co. v. United States, was a landmark decision of the US Supreme Court on the First Amendment.
+          The ruling made it possible for The New York Times and The Washington Post newspapers to publish the
+          then-classified Pentagon Papers without risk of government censorship or punishment.
+        </div>
+        <div class="trigger" id='trigger' year="1972">
+          <b>1972: William Rehnquist joins the Court</b><br><br>
+          With the death of Harlan Stone, Richard Nixon nominated William Rehnquist to replace him.
+          Immediately, Rehnquist established himself as one of, if not the, most conservative members
+          of the court. As an intellectual leader and a future Chief Justice, his tenure on the court
+          would lay the ideological groundwork for the Court's rightward shift in the latter half
+          of the 20th century.
+        </div>
+        <div class="trigger" id='trigger' year="1973">
+          <b>1973: Roe v. Wade</b><br><br>
+          Roe v. Wade was a landmark decision of the U.S. Supreme Court in which the Court ruled that the Constitution
+          of the United States protects a pregnant woman's liberty to choose to have an abortion without excessive
+          government restriction.
+        </div>
+        <div class="trigger" id='trigger' year="1974">
+          <b>1974: United States v. Nixon</b><br><br>
+          <i>United States v. Nixon</i> was a landmark United States Supreme Court case that resulted in a unanimous
+          decision
+          against President Richard Nixon, ordering him to deliver tape recordings and other subpoenaed materials to a
+          federal district court. The decision was important to the late stages of the Watergate scandal, when there was
+          an ongoing impeachment process against Richard Nixon. United States v. Nixon is considered a crucial precedent
+          limiting the power of any U.S. president to claim executive privilege.
+        </div>
+        <div class="trigger" id='trigger' year="1975">
+          <b>1975: O'Connor v. Donaldson</b><br><br>
+          In O'Connor v. Donaldson, the court ruled theatres
+          The states cannot involuntarily commit individuals if they are not a danger to themselves or others and are
+          capable of living by themselves or with the aid of responsible family members or friends.
+        </div>
+        <div class="trigger" id='trigger' year="1976">
+          <b>1976: Buckley v. Valeo</b><br><br>
+          In Buckley v. Valeo, the court ruled that
+          spending money to influence elections is a form of constitutionally protected free speech; therefore, federal
+          limits on campaign contributions are constitutional in only a limited number of circumstances.
+          This ruling applied to private individuals and not businesses.
+        </div>
+        <div class="trigger" id='trigger' year="1977">
+          <b>1977: Carey v. Population Services International</b><br><br>
+          In Carey v. Population Services International, the court ruled that
+          laws that restrict the sale, distribution, and advertisement
+          of contraceptives to both adults and minors are unconstitutional.
+        </div>
+        <div class="trigger" id='trigger' year="1978">
+          <b>1978: Regents of the University of California v. Bakke</b><br><br>
+          In Regents of University of California v. Bakke (1978), the Supreme Court ruled that a university's use of
+          racial "quotas" in its admissions process was unconstitutional, but a school's use of "affirmative action"
+          to accept more minority applicants was constitutional in some circumstances. The case involved the admissions
+          practices of the Medical School of the University of California at Davis.
+        </div>
+        <div class="trigger" id='trigger' year="1979">
+          <b>1979: Addington v. Texas</b><br><br>
+          In Addington v. Texas the court ruled a "clear and convincing" standard of proof is required by the
+          Fourteenth Amendment in a civil proceeding brought under state law to commit an individual involuntarily for
+          an indefinite period to a state mental hospital.
+        </div>
+        <div class="trigger" id='trigger' year="1980">
+          <b>1980: Diamond v. Chakrabarty</b><br><br>
+          In Diamond v. Chakrabarty, the court ruled that genetically modified organisms could be patented.
+          This case helped open the way for modern bioengineering companies and genetically modified foods.
+        </div>
+        <div class="trigger" id='trigger' year="1981">
+          <b>1981</b><br><br>
+
+        </div>
+        <div class="trigger" id='trigger' year="1982">
+          <b>1982: Enmund v. Florida</b><br><br>
+          In Enmund v. Florida, the court ruled that
+          a death sentence may not be imposed on offenders who are involved in a felony during which a murder is
+          committed but who do not actually kill, attempt to kill, or intend that a killing take place.
+        </div>
+        <div class="trigger" id='trigger' year="1983">
+          <b>1983: Sony v. Universal</b><br><br>
+          In Sony v. Universal, the court ruled that manufacturers of home video recording devices cannot be liable for
+          copyright infringement
+          by their purchasers because the devices are sold for legitimate purposes and have
+          non-infringing uses. Personal use of the machines to record TV for
+          later viewing constitutes fair use.
+        </div>
+        <div class="trigger" id='trigger' year="1984">
+          <b>1984</b><br><br></div>
+        <div class="trigger" id='trigger' year="1985">
+          <b>1985</b><br><br>
+        </div>
+        <div class="trigger" id='trigger' year="1986">
+          <b>1986: The Rehnquist Court Begins</b><br><br>
+          With the retirement of Warren Burger, Ronald Reagan elevated William Rehnquist
+          to the Chief Justice and nominated Antonin Scalia to fill Rehnquist's vacated
+          associate justice seat. Both men would come to be considered staunch conservatives and
+          ideological leaders of the movement, with Scalia becoming one of the strongest
+          champions of "originalism." In originalism, the constitution should be interpreted
+          according to how it would have been originally understood at the time of its
+          writing rather than reinterpreted to fit the changing times.
+        </div>
+        <div class="trigger" id='trigger' year="1987">
+          <b>1987: Edwards v. Aguillard</b><br><br>
+          In Edwards v. Aguillard, the court ruled that
+          teaching creationism in public schools is unconstitutional.
+        </div>
+        <div class="trigger" id='trigger' year="1988">
+          <b>1988: Hustler v. Falwell</b><br><br>
+          In Hustler Magazine v. Falwell, the court ruled that
+          parodies of public figures, including those intended to cause
+          emotional distress, are protected by the First Amendment.
+        </div>
+        <div class="trigger" id='trigger' year="1989">
+          <b>1989: Texas v. Johnson</b><br><br>
+          <i>Texas v. Johnson</i> was a landmark decision of the US Supreme Court that invalidated prohibitions on
+          desecrating
+          the American flag. At the time, such laws were enforced in 48 of the 50 states.
+        </div>
+        <div class="trigger" id='trigger' year="1990">
+          <b>1990: Cruzan v. Missouri Dept. of Health</b><br><br>
+          In Cruzan v. Missouri Dept. of Health, the court ruled ruled that it was constitutional to require "clear and
+          convincing evidence" of a patient's wishes
+          for removal of life support. It was the first "right to die" case brought before the court.
+        </div>
+        <div class="trigger" id='trigger' year="1991">
+          <b>1991: Feist Publications, Inc. v. Rural Telephone Service Company, Inc.</b><br><br>
+          In this landmark copyright case, the court ruled that originality is required for a work to obtain copyright.
+          Previously, the court had followed the doctrine of 'sweat of the brow,' in which the most important
+          factor for recieving a copyright was whether or not the applicant had invested
+          significant time and energy into their work. Originality is still the foundation of copyright law today.
+        </div>
+        <div class="trigger" id='trigger' year="1992">
+          <b>1992: Planned Parenthood of Southeastern Pennsylvania v. Casey</b><br><br>
+          In Casey v. Planned Parenthood, the Supreme Court affirmed the basic ruling of Roe v. Wade that the state is
+          prohibited from banning most abortions. Casey also ruled, however, that states may regulate abortions so as
+          to protect the health of the mother and the life of the fetus, and may outlaw abortions of "viable" fetuses.
+        </div>
+        <div class="trigger" id='trigger' year="1993">
+          <b>1993: Ginsburg joins the court</b><br><br>
+          After the retirement of Justice White, Bill Clinton nominated Ruth Bader Ginsburg
+          to replace her. Already a feminist icon at the time for her career as a judge and
+          lawyer, she would become a staunch liberal on the court. Her sharp
+          opinions and ideological positions would earn her the nickname 'Notorious R.B.G'
+        </div>
+        <div class="trigger" id='trigger' year="1994">
+          <b>1994: J. E. B. v. Alabama</b><br><br>
+          In J.E.B v. Alabama, the court ruled that lawyers could not use preemptory challenges to
+          remove members from a jury based on sex. In the case, the prosecution had used preemptory
+          challenges to remove every male member of the jury.
+        </div>
+        <div class="trigger" id='trigger' year="1995">
+          <b>1995: United States v. Lopez</b><br><br>
+          In United States v. Lopez, the court ruled that the Gun-Free School Zones Act of 1990 is unconstitutional.
+          The court found that Congress did not have the power to criminalize gun posession itself, even
+          near a school.
+        </div>
+        <div class="trigger" id='trigger' year="1996">
+          <b>1996: Romer v. Evans</b><br><br>
+          In Romer v. Evans, the court ruled that a Colorado state constitutional amendment that prevented homosexuals
+          and
+          bisexuals from being able to obtain protections under the law is a violation of the Equal Protection Clause of
+          the Fourteenth Amendment.
+        </div>
+        <div class="trigger" id='trigger' year="1997">
+          <b>1997: Washington v. Glucksberg</b><br><br>
+          In Washington v. Glucksberg, the court ruled that states could ban assisted suicide.
+        </div>
+        <div class="trigger" id='trigger' year="1998">
+          <b>1998: Clinton v. City of New York</b><br><br>
+          In Clinton v. City of New York, the court ruled that the Line Item Veto Act of 1996 is unconstitutional
+          because it
+          allows the President to amend or repeal parts of statutes without the pre-approval of Congress. Currently, the
+          presidential veto can only be used on an entire legislation, rather than individual parts of a piece of
+          legislation.
+        </div>
+        <div class="trigger" id='trigger' year="1999">
+          <b>1999</b><br><br>
+        </div>
+        <div class="trigger" id='trigger' year="2000">
+          <b>2000: Bush v. Gore</b><br><br>
+          <i>Bush v. Gore</i> was a controversial decision that settled a recount
+          dispute in Florida's 2000 presidential election between George W. Bush and Al Gore. On December 8, the
+          Florida Supreme Court had ordered a statewide recount of all undervotes, over 61,000 ballots that the vote
+          tabulation machines had missed. In a per curiam decision, the Court first ruled, strictly on equal
+          protection grounds, that the recount be stopped.
+        </div>
+        <div class="trigger" id='trigger' year="2001">
+          <b>2001: A&M Records, Inc. v. Napster, Inc.</b><br><br>
+          In this case, the court ruled that peer-to-peer (P2P) file-sharing service Napster could be held liable for
+          the copyright infringement of its users. This case has forced torrenting services to set up their
+          businesses outside the United States.
+        </div>
+        <div class="trigger" id='trigger' year="2002">
+          <b>2002: Board of Education v. Earls</b><br><br>
+          In Board of Education v. Earls, the court ruled that it was constitutional for a school district to
+          force a student to take a drug test in order to participate in extracurricular activities.
+        </div>
+        <div class="trigger" id='trigger' year="2003">
+          <b>2003: Lawrence v. Texas</b><br><br>
+          In Lawrence v. Texas, the court ruled that a Texas law that criminalized consensual same-sex sexual conduct
+          violated homosexuals' right to privacy under the Due Process Clause of the Fourteenth Amendment.
+          This decision invalidated all remaining sodomy laws in the United States, and was a landmark in LGBT
+          rights.<br>
+        </div>
+        <div class="trigger" id='trigger' year="2004">
+          <b>2004: Hamdi v. Rumseld</b><br><br>
+          In Hamdi v. Rumsfeld, the court ruled that the federal government has the power to detain those it designates
+          as
+          enemy combatants, including United States citizens. However, United States citizens are entitled to
+          due process, and must be able to challenge their enemy combatant status before an impartial
+          authority. This case proved to be a
+        </div>
+        <div class="trigger" id='trigger' year="2005">
+          <b>2005: The Roberts Court Begins</b><br><br>
+          With the death of William Rehnquist, George W. Bush appointed John Roberts to replace him as Chief Justice.
+          Especially following the Trump nominations, the Roberts court has been much more conservative than its
+          predecessors.
+          The present-day Court frequently uses originalism or textualism to justify its majority opinions while paying
+          less
+          deference to precedent than previous courts.
+        </div>
+        <div class="trigger" id='trigger' year="2006">
+          <b>2006: Hamdan v. Rumsfeld</b><br><br>
+          In Hamdan v. Rumsfeld, the court ruled that the military commissions set up by the Bush administration to try
+          detainees at Guantanamo Bay detention camp were illegal because they lack the protections that are required by
+          the Geneva Conventions and the Uniform Code of Military Justice.
+        </div>
+        <div class="trigger" id='trigger' year="2007">
+          <b>2007: Massachusetts v. EPA</b><br><br>
+          In Massachusetts v. Environmental Protection Agency, the court ruled that
+          greenhouse gases are air pollutants, and the Environmental Protection Agency
+          may regulate their emission under the Clean Air Act. This case opened the way for the
+          EPA to play a larger role in reducing greenhouse gas emissions and limiting climate change.
+        </div>
+        <div class="trigger" id='trigger' year="2008">
+          <b>2008: District of Columbia v. Heller</b><br><br>
+          This is the case in which the U.S. Supreme Court held that the Second Amendment guarantees an individual
+          right to possess firearms independent of service in a state militia and to use firearms for traditionally
+          lawful purposes, including self-defense within the home. It was the first Supreme Court case to explore the
+          meaning of the Second Amendment since United States v. Miller(1939).
+        </div>
+        <div class="trigger" id='trigger' year="2009">
+          <b>2009</b><br><br>
+        </div>
+        <div class="trigger" id='trigger' year="2010">
+          <b>2010: Citizens United v. Federal Election Commission</b><br><br>
+          Citizens United v. Federal Election Commission, was a landmark decision of the Supreme Court of the United
+          States concerning campaign finance. The Court held that the free speech clause of the First Amendment
+          prohibits
+          the government from restricting independent expenditures for political communications by corporations,
+          including nonprofit corporations, labor unions, and other associations.
+        </div>
+        <div class="trigger" id='trigger' year="2011">
+          <b>2011: Brown v. Entertainment Merchants Association</b><br><br>
+          In Brown v. Entertainment Merchants Association, the court ruled that it was
+          unconsitutional for the law to ban the sale of violent video games
+          games to children without parental supervision.
+        </div>
+        <div class="trigger" id='trigger' year="2012">
+          <b>2012: National Federation of Independent Business v. Sebelius</b><br><br>
+          National Federation of Independent Business v. Sebelius, was a landmark United States Supreme Court decision
+          in which the Court upheld Congress' power to enact most provisions of the Patient Protection and Affordable
+          Care Act (ACA), commonly called Obamacare, and the Health Care and Education Reconciliation Act (HCERA),
+          including a requirement for most Americans to have health insurance by 2014. The Acts represented a major set
+          of changes to the American health care system that had been the subject of highly contentious debate, largely
+          divided on political party lines.
+        </div>
+        <div class="trigger" id='trigger' year="2013">
+          <b>2013: Shelby County v. Holder</b><br><br>
+          This was a decision of the US Supreme Court regarding the constitutionality of two provisions of the Voting
+          Rights Act of 1965: Section 5, which requires certain states and local governments to obtain federal
+          preclearance before implementing any changes to their voting laws or practices; and Section 4(b), which
+          contains the coverage formula that determines which jurisdictions are subjected to preclearance based on
+          their histories of discrimination in voting. On June 25, 2013, the Supreme Court ruled that the coverage
+          formula in Section 4(b) of the Voting Rights Act is unconstitutional because it is based on an old formula.
+        </div>
+        <div class="trigger" id='trigger' year="2014">
+          <b>2014: Burwell v. Hobby Lobby Stores, Inc.</b><br><br>
+          Burwell v. Hobby Lobby, is a landmark decision in corporate law by the United States Supreme Court allowing
+          closely held for-profit corporations to be exempt from a regulation its owners religiously object to, if there
+          is a less restrictive means of furthering the law's interest, according to the provisions of the Religious
+          Freedom Restoration Act.
+        </div>
+        <div class="trigger" id='trigger' year="2015">
+          <b>2015: Obergefell v. Hodges</b><br><br>
+          This is a landmark civil rights case in which the Supreme Court of the United States ruled that the
+          fundamental right to marry is guaranteed to same-sex couples by both the Due Process Clause and the Equal
+          Protection
+          Clause of the Fourteenth Amendment to the United States Constitution.
+        </div>
+        <div class="trigger" id='trigger' year="2016">
+          <b>2016: A Vacancy on the Court</b><br><br>
+          Justice Antonin Scalia, a conservative leader on the court,
+          died of natural causes in 2016. Though Obama was the president at that time, the
+          Republican-controlled Senate refused to consider Obama's nominees.
+        </div>
+        <div class="trigger" id='trigger' year="2017">
+          <b>2017: Gorsuch replaces Scalia</b><br><br>
+          With the death of Antonin Scalia in 2016, the court had been missing a justice
+          for almost two years. With Donald Trump as the new president, the Senate confirmed
+          Neil Gorsuch to fill the vacant seat. The Senate changed the rules so that
+          Supreme Court nominees could not be filibustered, changing the number of votes
+          which were needed from 60 to 51.
+          Though Gorsuch was ideologically similar to Scalia, the refusal to
+          consider Obama's nominees led to a new level of hostility between
+          the parties on SCOTUS nominations.
+        </div>
+        <div class="trigger" id='trigger' year="2018">
+          <b>2018: Kavanaugh replaces Kennedy</b><br><br>
+          With the retirement of Anthony Kennedy, Donald Trump nominated
+          Brett Kavanaugh to replace him. This was a notable shift in the modern
+          court's composition because Kavanaugh was expected to be substantially
+          more conservative than Kennedy. Kennedy had previously been the median
+          justice on the court, so Gorsuch's nomination created a new conservative majority
+          on the court.
+        </div>
+        <div class="trigger" id='trigger' year="2019">
+          <b>2019: Department of Homeland Security v. Regents of the University of California</b><br><br>
+          In Department of Homeland Security v. Regents of the University of California, the court ruled that a 2017
+          U.S. Department of Homeland Security (DHS) order to rescind the Deferred Action for Childhood Arrivals (DACA)
+          immigration program was "arbitrary and capricious" under the Administrative Procedure Act (APA) and reversed
+          the order.
+        </div>
+        <div class="outro" id='outro'>
+          The last 80 years of the Supreme Court's history have been eventful, but the ideological shift of the court 
+          continues in the present day. With the death of liberal icon Ruth Bader Ginsburg and Donald Trump's 
+          nomination of conservative judge Amy Coney Barrett to replace her, the court is expect to shift even further
+          to the right. 
+
+          Unlike other government positions in the United States, Justices are unelected and serve for life. 
+          However, that is not to say that your vote does not matter. The president nominates new Supreme Court 
+          justices and the Senate confirms them. If you are passionate about the Supreme Court, we recommend 
+          that you get involved with your local political parties. Please go to <a href="https://mqscores.lsa.umich.edu/measures.php">https://www.senate.gov/</a> 
+          to learn who your senator is, and how to contact them. Though only nine justices serve on the court, 
+          ultimately it is your vote that determines the direction of American law.  
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+
+  <script>
+    // helper function so we can map over dom selection
+    function selectionToArray(selection) {
+      var len = selection.length
+      var result = []
+      for (var i = 0; i < len; i++) {
+        result.push(selection[i])
+      }
+      return result
+    }
+
+    function waypoints() {
+      // select elements
+      var graphicEl = document.getElementById('graphic__vis')
+      var graphicVisEl = document.getElementById('graph')
+      var triggerEls = selectionToArray(document.querySelectorAll('.trigger'))
+      var intro = document.getElementById('intro__vis')
+      var outro = document.getElementById('outro__vis')
+
+      // viewport height
+      var viewportHeight = window.innerHeight
+      var halfViewportHeight = Math.floor(viewportHeight / 2)
+
+      // setup a waypoint trigger for each trigger element
+      var waypoints = triggerEls.map(function (el) {
+
+        // get the step, cast as number					
+        var step = +el.getAttribute('year')
+
+        return new Waypoint({
+          element: el, // our trigger element
+          handler: function (direction) {
+            // hide the intro and outro
+            intro.style.top = '150%';
+            outro.style.top = '150%';
+            graphicEl.style.top = '2%';
+
+            // if the direction is down then we use that number,
+            // else, we want to trigger the previous one
+            var nextStep = direction === 'down' ? step : Math.max(0, step - 1)
+
+            // tell our graphic to update with a specific step
+            onYearSelected(nextStep)
+            // console.log(nextStep)
+          },
+          offset: '50%',  // trigger halfway up the viewport
+        })
+      })
+    }
+
+    waypoints()
+
+    var authors_waypoint = new Waypoint({
+      element: document.getElementById('authors'),
+      handler: function (direction) {
+        var intro = document.getElementById('intro__vis')
+        var outro = document.getElementById('outro__vis')
+        var graphic = document.getElementById('graphic__vis')
+
+        intro.style.top = '150%';
+        outro.style.top = '150%';
+        graphic.style.top = '150%';
+      },
+      offset: '50%'  // trigger halfway up the viewport
+    })
+
+    var intro_waypoint = new Waypoint({
+      element: document.getElementById('intro'),
+      handler: function (direction) {
+        var intro = document.getElementById('intro__vis')
+        var outro = document.getElementById('outro__vis')
+        var graphic = document.getElementById('graphic__vis')
+
+        if (direction === 'down') {
+          intro.style.top = '2%';
+          outro.style.top = '150%';
+          graphic.style.top = '150%';
+        } else {
+          intro.style.top = '150%';
+          outro.style.top = '150%';
+          graphic.style.top = '150%';
+        }
+
+        // console.log('Intro triggered')
+      },
+      offset: '50%'  // trigger halfway up the viewport
+    })
+
+    var outro_waypoint = new Waypoint({
+      element: document.getElementById('outro'),
+      handler: function (direction) {
+        var intro = document.getElementById('intro__vis')
+        var outro = document.getElementById('outro__vis')
+        var graphic = document.getElementById('graphic__vis')
+
+        if (direction === 'down') {
+          intro.style.top = '150%';
+          outro.style.top = '2%';
+          graphic.style.top = '150%';
+        } else {
+          intro.style.top = '150%';
+          outro.style.top = '150%';
+          graphic.style.top = '2%';
+        }
+
+
+        // console.log('Outro triggered')
+      },
+      offset: '50%'  // trigger halfway up the viewport
+    })
+
+  </script>
+  </div>
+</body>
+
+</html>
